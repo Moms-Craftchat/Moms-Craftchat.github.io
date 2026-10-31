@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Moms CraftChat | أوراق عمل وأنشطة للأمهات والأطفال</title>
+	<meta name="description" content="مدونة Moms CraftChat لعرض أوراق عمل وأنشطة تعليمية وترفيهية للأطفال، مرتبطة بقناتنا الخاصة." />
+	<link rel="icon" href="images/logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<!--
+		تنسيقات إضافية فقط لصف روابط الحروف الأفقي وشكل صورة/حرف كل بطاقة.
+		تستخدم نفس متغيرات main.css (--gray, --charcoal, --pink, --shadow...) حتى تتطابق مع باقي الموقع.
+	-->
+	<style>
+		.letters-nav{
+			display:flex;
+			flex-wrap:nowrap;
+			overflow-x:auto;
+			gap:10px;
+			justify-content:flex-start;
+			padding:6px 4px 14px;
+			margin-top:22px;
+			scrollbar-width:thin;
+		}
+		.letters-nav-link{
+			flex:0 0 auto;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			width:44px;
+			height:44px;
+			border-radius:50%;
+			background:var(--gray);
+			color:var(--charcoal);
+			font-family:'Baloo Bhaijaan 2', sans-serif;
+			font-weight:700;
+			font-size:1.1em;
+			box-shadow:var(--shadow);
+			transition:transform .18s ease, background .18s ease;
+		}
+		.letters-nav-link:hover{
+			background:var(--pink);
+			transform:translateY(-2px);
+		}
+
+		.worksheet-card{
+			scroll-margin-top:110px;
+		}
+		.worksheet-thumb-link{
+			all:unset;
+			cursor:pointer;
+			display:block;
+			width:100%;
+		}
+		.worksheet-thumb-link:focus-visible .worksheet-thumb{
+			outline:3px solid var(--cyan-deep);
+			outline-offset:3px;
+		}
+		.worksheet-thumb-link .worksheet-thumb{
+			transition:transform .2s ease;
+		}
+		.worksheet-thumb-link:hover .worksheet-thumb{
+			transform:translateY(-4px);
+		}
+		.worksheet-thumb img{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			border-radius:inherit;
+		}
+		.letter-glyph{
+			font-family:'Baloo Bhaijaan 2', sans-serif;
+			font-weight:800;
+			font-size:2.4em;
+			color:var(--charcoal);
+			line-height:1;
+		}
+		#backToTopBtn {
+    			display: none; /* يكون مخفياً في البداية */
+    			position: fixed; /* تثبيت الزر في الشاشة دائماً حتى مع التمرير */
+    			bottom: 20px; /* المسافة من أسفل الشاشة */
+    		left: 20px; /* المسافة من يسار الشاشة (يمكنكِ تغييره إلى right: 20px إذا رغبتِ) */
+    		z-index: 99; /* التأكد من ظهور الزر فوق جميع عناصر الموقع والأفلام */
+    		border: none;
+    		outline: none;
+    		background-color: #FFc1e1; /* لون خلفية الزر (يمكنكِ تغييره ليناسب ألوان موقعك) */
+    			color: white; /* لون السهم */
+    			cursor: pointer;
+   		 padding: 15px;
+    			border-radius: 50%; /* تحويل الزر إلى شكل دائرى */
+    		font-size: 18px;
+    		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* إضافة ظل خفيف ليعطي تأثير الطفو */
+    		transition: background-color 0.3s, transform 0.2s;
+		}
+
+/* تأثير عند تمرير الفأرة فوق الزر */
+		#backToTopBtn:hover {
+    			background-color: #a8e4f7; /* تغميق اللون قليلاً عند التحويم */
+   			 transform: scale(1.1); /* تكبير الزر بنسبة بسيطة كحركة تفاعلية */
+		}
+
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- decorative background blobs -->
+	<div class="bg-deco" aria-hidden="true">
+		<span class="blob blob-1"></span>
+		<span class="blob blob-2"></span>
+		<span class="spark spark-1">✦</span>
+		<span class="spark spark-2">✦</span>
+		<span class="spark spark-3">✦</span>
+	</div>
+<!-- زر الصعود للأعلى العائم -->
+<button type="button" id="backToTopBtn" onclick="scrollToTop()" title="العودة للأعلى">
+  <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+    <path d="M13 7.828V20h-2V7.828l-5.364 5.364-1.414-1.414L12 4l7.778 7.778-1.414 1.414L13 7.828z"/>
+  </svg>
+</button>
+
+	<div id="page-wrapper">
+
+		<!-- Header / Hero -->
+		<header id="hero">
+			<div class="container">
+				<nav id="nav">
+					<a href="index.html" id="logo">
+						<img src="images/logo.png"style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;" alt="شعار Moms CraftChat" />
+						<span class="en">Moms CraftChat</span>
+					</a>
+					<ul>
+						<!--<li><a href="#about">من نحن</a></li>-->
+						<li><a href="#worksheets">أوراق العمل</a></li>
+						<li><a href="#contact" class="nav-cta">تواصلوا معنا</a></li>
+					</ul>
+				</nav>
+
+				<div class="hero-content">
+					<h1>أوراق عمل <strong>وأنشطة</strong> للأطفال</h1>
+					<p>محتوى مبسّط وممتع، مصمم بحب ليساعد الأم أو المعلمة في صنع أنشطة تعليمية وحرفية دون تعقيد.</p>
+					<div class="hero-actions">
+						<a href="#worksheets" class="button primary">شاهدوا أحدث الأنشطة</a>
+						<!--<a href="#about" class="button ghost">تعرفي علينا أكثر</a>-->
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- About -->
+		<!--
+		<section id="about" class="section">
+			<div class="container">
+				<header class="section-head">
+					<span class="eyebrow">من نحن</span>
+					<h2>قناة صغيرة… بقلب كبير محبٍّ للأطفال</h2>
+				</header>
+
+				<div class="cards cards-3">
+					<article class="card">
+						<div class="card-icon">💛</div>
+						<h3>قصتنا</h3>
+						<p>بدأنا كقناة بسيطة نشارك فيها أنشطة وأفكار ابداعية نصنعها مع أطفالنا في المنزل، وتحولت لمساحة تجمع الأمهات والمعلمات الباحثات عن أفكار ابداعية تنمي مهارات أطفالهم دون تعقيد.</p>
+					</article>
+					<article class="card">
+						<div class="card-icon">💗</div>
+						<h3>ماذا يمّيز أوراق عملنا</h3>
+						<p>كل ورقة عمل مصممة بألوان هادئة وخط واضح، ومختبرة فعليًا مع أطفال بأعمار مختلفة قبل أن ننشرها.</p>
+					</article>
+					<article class="card">
+						<div class="card-icon">💙</div>
+						<h3>لمن نوجه محتوانا</h3>
+						<p>للأمهات والمعلمات اللاتي يبحثن عن نشاط سهل وسريع التحضير، للأطفال في مرحلة ماقبل المدرسة وللمرحلة الابتدائية.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+		-->
+		<!-- Worksheets / Activities -->
+		<section id="worksheets" class="section alt">
+			<div class="container">
+				<header class="section-head">
+					<!--<span class="eyebrow">أحدث المحتوى</span>-->
+					<h2>أوراق عمل جاهزة للطباعة وفيديو لكل حرف</h2>
+					<p class="section-sub">اختر الحرف مباشرة من الفهرس أدناه.</p>
+<button type="button" class="howto-thumb" id="howto-open" aria-label="تكبير صورة طريقة استخدام أوراق العمل">
+	<img src="images/how-to-use.jpg" alt="طفلة تكتب حرف الألف على ورقة عمل مطبوعة" loading="lazy" />
+</button>
+
+					<nav class="letters-nav" aria-label="فهرس الحروف العربية">
+					<a class="letters-nav-link" href="#letter-1" aria-label="اذهبي إلى حرف أ">أ</a>
+					<a class="letters-nav-link" href="#letter-2" aria-label="اذهبي إلى حرف ب">ب</a>
+					<a class="letters-nav-link" href="#letter-3" aria-label="اذهبي إلى حرف ت">ت</a>
+					<a class="letters-nav-link" href="#letter-4" aria-label="اذهبي إلى حرف ث">ث</a>
+					<a class="letters-nav-link" href="#letter-5" aria-label="اذهبي إلى حرف ج">ج</a>
+					<a class="letters-nav-link" href="#letter-6" aria-label="اذهبي إلى حرف ح">ح</a>
+					<a class="letters-nav-link" href="#letter-7" aria-label="اذهبي إلى حرف خ">خ</a>
+					<a class="letters-nav-link" href="#letter-8" aria-label="اذهبي إلى حرف د">د</a>
+					<a class="letters-nav-link" href="#letter-9" aria-label="اذهبي إلى حرف ذ">ذ</a>
+					<a class="letters-nav-link" href="#letter-10" aria-label="اذهبي إلى حرف ر">ر</a>
+					<a class="letters-nav-link" href="#letter-11" aria-label="اذهبي إلى حرف ز">ز</a>
+					<a class="letters-nav-link" href="#letter-12" aria-label="اذهبي إلى حرف س">س</a>
+					<a class="letters-nav-link" href="#letter-13" aria-label="اذهبي إلى حرف ش">ش</a>
+					<a class="letters-nav-link" href="#letter-14" aria-label="اذهبي إلى حرف ص">ص</a>
+					<a class="letters-nav-link" href="#letter-15" aria-label="اذهبي إلى حرف ض">ض</a>
+					<a class="letters-nav-link" href="#letter-16" aria-label="اذهبي إلى حرف ط">ط</a>
+					<a class="letters-nav-link" href="#letter-17" aria-label="اذهبي إلى حرف ظ">ظ</a>
+					<a class="letters-nav-link" href="#letter-18" aria-label="اذهبي إلى حرف ع">ع</a>
+					<a class="letters-nav-link" href="#letter-19" aria-label="اذهبي إلى حرف غ">غ</a>
+					<a class="letters-nav-link" href="#letter-20" aria-label="اذهبي إلى حرف ف">ف</a>
+					<a class="letters-nav-link" href="#letter-21" aria-label="اذهبي إلى حرف ق">ق</a>
+					<a class="letters-nav-link" href="#letter-22" aria-label="اذهبي إلى حرف ك">ك</a>
+					<a class="letters-nav-link" href="#letter-23" aria-label="اذهبي إلى حرف ل">ل</a>
+					<a class="letters-nav-link" href="#letter-24" aria-label="اذهبي إلى حرف م">م</a>
+					<a class="letters-nav-link" href="#letter-25" aria-label="اذهبي إلى حرف ن">ن</a>
+					<a class="letters-nav-link" href="#letter-26" aria-label="اذهبي إلى حرف هـ">هـ</a>
+					<a class="letters-nav-link" href="#letter-27" aria-label="اذهبي إلى حرف و">و</a>
+					<a class="letters-nav-link" href="#letter-28" aria-label="اذهبي إلى حرف ي">ي</a>
+					</nav>
+				</header>
+
+				<div class="cards cards-3 worksheet-grid">
+					<article class="card worksheet-card" id="letter-1">
+    <a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف أ">
+        <div class="worksheet-thumb thumb-yellow">
+            <span class="letter-glyph">أ</span>
+        </div>
+    </a>
+    <h3>حرف أ</h3>
+    <p>ورقة تدريب وتلوين لحرف أ.</p>
+    
+    <!-- زر تحميل الورقة (كما هو) -->
+    <a href="assets/files/letter-1.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+    
+    <a href="https://www.youtube.com/watch?v=oeCE7t81v6g&list=PLh7gOMo_6PRNuLjSN7a7l2IAErPvVKyuM&index=28" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+</article>
+					<article class="card worksheet-card" id="letter-2">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ب">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ب</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/2.jpg" alt="حرف ب"> -->
+							</div>
+						</a>
+						<h3>حرف ب</h3>
+						<p>ورقة تدريب وتلوين لحرف ب.</p>
+						<a href="assets/files/letter-2.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/M-v_V4r6A28?si=z32TbepokHe3b75_" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-3">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ت">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">ت</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/3.jpg" alt="حرف ت"> -->
+							</div>
+						</a>
+						<h3>حرف ت</h3>
+						<p>ورقة تدريب وتلوين لحرف ت.</p>
+						<a href="assets/files/letter-3.pdf" class="button small" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/t3m4XS0HOqQ?si=BA_WE5C0fSpJI1Db" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-4">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ث">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ث</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/4.jpg" alt="حرف ث"> -->
+							</div>
+						</a>
+						<h3>حرف ث</h3>
+						<p>ورقة تدريب وتلوين لحرف ث.</p>
+						<a href="assets/files/letter-4.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/t3m4XS0HOqQ?si=ANC2E6lGh0fdZYmn" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-5">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ج">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ج</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/5.jpg" alt="حرف ج"> -->
+							</div>
+						</a>
+						<h3>حرف ج</h3>
+						<p>ورقة تدريب وتلوين لحرف ج.</p>
+						<a href="assets/files/letter-5.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/AurUoIRrbIw?si=EYGR_KK_vZ-C8Qvu" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-6">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ح">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">ح</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/6.jpg" alt="حرف ح"> -->
+							</div>
+						</a>
+						<h3>حرف ح</h3>
+						<p>ورقة تدريب وتلوين لحرف ح.</p>
+						<a href="assets/files/letter-6.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/LIxPfRsMn_k?si=W8nbo4JIJVVu1ylK" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-7">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف خ">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">خ</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/7.jpg" alt="حرف خ"> -->
+							</div>
+						</a>
+						<h3>حرف خ</h3>
+						<p>ورقة تدريب وتلوين لحرف خ.</p>
+						<a href="assets/files/letter-7.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/iKnJChxBzI4?si=xu5JfFCKUpUNt_9-" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-8">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف د">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">د</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/8.jpg" alt="حرف د"> -->
+							</div>
+						</a>
+						<h3>حرف د</h3>
+						<p>ورقة تدريب وتلوين لحرف د.</p>
+						<a href="assets/files/letter-8.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/KOrXFf7HTjU?si=lzDOCzKryw_iatxS" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-9">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ذ">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">ذ</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/9.jpg" alt="حرف ذ"> -->
+							</div>
+						</a>
+						<h3>حرف ذ</h3>
+						<p>ورقة تدريب وتلوين لحرف ذ.</p>
+						<a href="assets/files/letter-9.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/SwES7saKgjo?si=Z4j0yqFnFQd3VGdS" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-10">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ر">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ر</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/10.jpg" alt="حرف ر"> -->
+							</div>
+						</a>
+						<h3>حرف ر</h3>
+						<p>ورقة تدريب وتلوين لحرف ر.</p>
+						<a href="assets/files/letter-10.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/LTed_s0pPOI?si=oKzNG2ATs5wc5hZo" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-11">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ز">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ز</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/11.jpg" alt="حرف ز"> -->
+							</div>
+						</a>
+						<h3>حرف ز</h3>
+						<p>ورقة تدريب وتلوين لحرف ز.</p>
+						<a href="assets/files/letter-11.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/V0RFENsiMxE?si=av2gL1K-gVanyEE3" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-12">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف س">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">س</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/12.jpg" alt="حرف س"> -->
+							</div>
+						</a>
+						<h3>حرف س</h3>
+						<p>ورقة تدريب وتلوين لحرف س.</p>
+						<a href="assets/files/letter-12.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/IeUWlIAeto4?si=DxHTduo6_OfKcCrC" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-13">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ش">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ش</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/13.jpg" alt="حرف ش"> -->
+							</div>
+						</a>
+						<h3>حرف ش</h3>
+						<p>ورقة تدريب وتلوين لحرف ش.</p>
+						<a href="assets/files/letter-13.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/_oYFK6HQ02g?si=qrMtgYMJ5e9JHxP9" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-14">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ص">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ص</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/14.jpg" alt="حرف ص"> -->
+							</div>
+						</a>
+						<h3>حرف ص</h3>
+						<p>ورقة تدريب وتلوين لحرف ص.</p>
+						<a href="assets/files/letter-14.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/QCTdkRuvxGs?si=O0DwsL3QtIim7DZC" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-15">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ض">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">ض</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/15.jpg" alt="حرف ض"> -->
+							</div>
+						</a>
+						<h3>حرف ض</h3>
+						<p>ورقة تدريب وتلوين لحرف ض.</p>
+						<a href="assets/files/letter-15.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/_oYFK6HQ02g?si=9DcEgGJVJGkZzAlv" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-16">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ط">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ط</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/16.jpg" alt="حرف ط"> -->
+							</div>
+						</a>
+						<h3>حرف ط</h3>
+						<p>ورقة تدريب وتلوين لحرف ط.</p>
+						<a href="assets/files/letter-16.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/2I_aIQPv-ZY?si=JPxQYAspPWIfS_SW" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-17">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ظ">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ظ</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/17.jpg" alt="حرف ظ"> -->
+							</div>
+						</a>
+						<h3>حرف ظ</h3>
+						<p>ورقة تدريب وتلوين لحرف ظ.</p>
+						<a href="assets/files/letter-17.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/FC4jqoDbUmA?si=7M75iHugyJXFiFlu" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-18">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ع">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">ع</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/18.jpg" alt="حرف ع"> -->
+							</div>
+						</a>
+						<h3>حرف ع</h3>
+						<p>ورقة تدريب وتلوين لحرف ع.</p>
+						<a href="assets/files/letter-18.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/pNbIXvXhNxk?si=KNFEFfcjXO54GFUr" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-19">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف غ">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">غ</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/19.jpg" alt="حرف غ"> -->
+							</div>
+						</a>
+						<h3>حرف غ</h3>
+						<p>ورقة تدريب وتلوين لحرف غ.</p>
+						<a href="assets/files/letter-19.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/DmJor_zK-NY?si=2Jq6C-Ooj3iHeN6j" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-20">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ف">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ف</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/20.jpg" alt="حرف ف"> -->
+							</div>
+						</a>
+						<h3>حرف ف</h3>
+						<p>ورقة تدريب وتلوين لحرف ف.</p>
+						<a href="assets/files/letter-20.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/B0KlQ4goRqI?si=jv0C_e-Y041CvB8u" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-21">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ق">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">ق</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/21.jpg" alt="حرف ق"> -->
+							</div>
+						</a>
+						<h3>حرف ق</h3>
+						<p>ورقة تدريب وتلوين لحرف ق.</p>
+						<a href="assets/files/letter-21.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/8B7FKxwqESE?si=qWwYk91IIYcRbmxz" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-22">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ك">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ك</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/22.jpg" alt="حرف ك"> -->
+							</div>
+						</a>
+						<h3>حرف ك</h3>
+						<p>ورقة تدريب وتلوين لحرف ك.</p>
+						<a href="assets/files/letter-22.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/vqoHzs_QaIk?si=g-raaEKR2-Ept7Bt" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-23">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ل">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">ل</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/23.jpg" alt="حرف ل"> -->
+							</div>
+						</a>
+						<h3>حرف ل</h3>
+						<p>ورقة تدريب وتلوين لحرف ل.</p>
+						<a href="assets/files/letter-23.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/vqoHzs_QaIk?si=Dwy6kzFl9jaGTQ4b" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-24">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف م">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">م</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/24.jpg" alt="حرف م"> -->
+							</div>
+						</a>
+						<h3>حرف م</h3>
+						<p>ورقة تدريب وتلوين لحرف م.</p>
+						<a href="assets/files/letter-24.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/2Vj_X_0mAUY?si=ffT7Pu5PNK5aW-IJ" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-25">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ن">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ن</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/25.jpg" alt="حرف ن"> -->
+							</div>
+						</a>
+						<h3>حرف ن</h3>
+						<p>ورقة تدريب وتلوين لحرف ن.</p>
+						<a href="assets/files/letter-25.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtu.be/XwHplR_Dowk?si=F2YU3NT0XcV3SH5Q" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-26">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ه">
+							<div class="worksheet-thumb thumb-pink">
+								<span class="letter-glyph">هـ</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/26.jpg" alt="حرف هـ"> -->
+							</div>
+						</a>
+						<h3>حرف هـ</h3>
+						<p>ورقة تدريب وتلوين لحرف هـ.</p>
+						<a href="assets/files/letter-26.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtube.com/shorts/U-8bNuiTqeg?si=uve85k7fm7eR9J0Q" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-27">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف و">
+							<div class="worksheet-thumb thumb-blue">
+								<span class="letter-glyph">و</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/27.jpg" alt="حرف و"> -->
+							</div>
+						</a>
+						<h3>حرف و</h3>
+						<p>ورقة تدريب وتلوين لحرف و.</p>
+						<a href="assets/files/letter-27.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtube.com/shorts/9o1oZ0aXuSY?si=DoJGflQ8PzTlJ0iX" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+					<article class="card worksheet-card" id="letter-28">
+						<a class="worksheet-thumb-link" href="#" target="_blank" rel="noopener" aria-label="عرض حرف ي">
+							<div class="worksheet-thumb thumb-yellow">
+								<span class="letter-glyph">ي</span>
+								<!-- لعرض صورة حقيقية بدل الحرف، استبدلي السطر أعلاه بـ: <img src="images/letters/28.jpg" alt="حرف ي"> -->
+							</div>
+						</a>
+						<h3>حرف ي</h3>
+						<p>ورقة تدريب وتلوين لحرف ي.</p>
+						<a href="assets/files/letter-28.pdf" class="button small" target="_blank" rel="noopener">تحميل الورقة</a>
+						<a href="https://youtube.com/shorts/Opx67BiJP3c?si=ukPQIRNdQ2GmTvvu" class="button small ghost-small" target="_blank" rel="noopener">🎬 شاهدي الفيديو</a>
+					</article>
+				</div>
+
+				<div class="section-cta">
+					<a href="#" class="button primary">عرض كل الأنشطة</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer / Contact -->
+		<footer id="contact" class="section">
+			<div class="container">
+				<header class="section-head">
+					<!--<span class="eyebrow">تابعونا</span>-->
+					<h2>لنبقَ على تواصل</h2>
+				</header>
+
+				<div class="footer-grid">
+					<div class="footer-social">
+						<p>تابع القناة لتصلك أحدث الأنشطة:</p>
+						<div class="social-icons">
+							<a href="https://youtube.com/@moms_craftchat?feature=shared" target="_blank" rel="noopener" class="social-icon" aria-label="يوتيوب">
+								<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.5L15 12L10 14.5V9.5Z" fill="currentColor"/></svg>
+							</a>
+							<a href="https://www.instagram.com/moms_craftchat?igsh=MWE0anR6MHZsNWRocw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="social-icon" aria-label="انستقرام">
+								<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>
+							</a>
+							<a href="https://www.tiktok.com/@moms.craftchat?_r=1&_t=ZS-97uaYIm8eA6" target="_blank" rel="noopener" class="social-icon" aria-label="تيك توك">
+								<svg viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a2.7 2.7 0 1 1-2-2.6V9.3a5 5 0 1 0 3.6 4.8V8.2c.9.7 2 1.1 3.2 1.1V6.7a4.1 4.1 0 0 1-2.6-1A4.4 4.4 0 0 1 16.8 3H14Z" fill="currentColor"/></svg>
+							</a>
+						</div>
+					</div>
+
+					<div class="footer-form">
+						
+					<iframe src="https://preview.mailerlite.io/forms/2474288/202772405175715439/share"
+        					style="width:100%; height:600px; border:0;"
+      					  title="Subscribe"></iframe>
+					</div>
+					
+				</div>
+
+				<div id="copyright">
+					<p>© <span class="en">Moms CraftChat</span>. جميع الحقوق محفوظة.</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+<script>
+// الحصول على عنصر الزر من الصفحة
+const myButton = document.getElementById("backToTopBtn");
+
+// عندما يقوم المستخدم بالتمرير للأسفل بمقدار 300 بكسل، يظهر الزر، وإلا يختفي
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        myButton.style.display = "block";
+    } else {
+        myButton.style.display = "none";
+    }
+};
+
+// الدالة المسؤولة عن أخذ المستخدم لأعلى الصفحة بشكل سلس
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" /* تفعيل ميزة التمرير السلس الهادئ بدلاً من القفز المفاجئ */
+    });
+}
+</script>
+</body>
+</html>
