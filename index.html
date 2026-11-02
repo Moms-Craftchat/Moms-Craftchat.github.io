@@ -147,6 +147,74 @@
 						<a href="#worksheets" class="button primary">شاهدوا أحدث الأنشطة</a>
 						<!--<a href="#about" class="button ghost">تعرفي علينا أكثر</a>-->
 					</div>
+					<a href="#subscribe-form" class="promo-bar" aria-label="اشترك في نشرتنا البريدية، انتقل إلى نموذج الاشتراك">
+  <div class="promo-track">
+    <div class="promo-group">
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+    </div>
+    <div class="promo-group" aria-hidden="true">
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+      <span>💌 اشترك في نشرتنا البريدية لتصلك أوراق العمل فور صدورها</span><span class="promo-dot">✦</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  html { scroll-behavior: smooth; }
+
+  .promo-bar {
+    display: block;
+    overflow: hidden;
+    direction: ltr;
+    max-width: 640px;
+    margin: 26px auto 0;
+    background: linear-gradient(90deg, #FFc1e1, #fff0f7, #a8e4f7);
+    color: #4a4a4a;
+    text-decoration: none;
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 0;
+    border: 2px dashed rgba(255, 255, 255, .95);
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    cursor: pointer;
+    transition: transform .2s ease;
+  }
+  .promo-bar:hover { transform: translateY(-2px); }
+
+  .promo-track {
+    display: flex;
+    width: max-content;
+    animation: promo-scroll 30s linear infinite;
+  }
+  .promo-bar:hover .promo-track { animation-play-state: paused; }
+  .promo-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .promo-group span {
+    direction: rtl;
+    white-space: nowrap;
+    padding: 0 18px;
+  }
+  .promo-dot { color: #fde0a7ff; padding: 0 !important; }
+
+  @keyframes promo-scroll {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .promo-track { animation: none; }
+  }
+</style>
 				</div>
 			</div>
 		</header>
